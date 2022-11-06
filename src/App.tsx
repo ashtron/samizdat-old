@@ -1,15 +1,15 @@
 import React from 'react';
 import 'bulma/css/bulma.min.css';
+import MainPanel from "./MainPanel";
+import BookForm from "./BookForm";
 
 function App() {
   return (
-    <div>
-      <section className="container">
-        <div className="box">
-          Sup.
-        </div>
-      </section>
-    </div>
+    <>
+      <MainPanel>
+        <BookForm />
+      </MainPanel>
+    </>
   );
 }
 
