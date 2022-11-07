@@ -7,9 +7,7 @@ import BookForm from "./BookForm";
 function App() {
   return (
     <>
-      <MainPanel>
-        <BookForm />
-      </MainPanel>
+      <MainPanel />
     </>
   );
 }

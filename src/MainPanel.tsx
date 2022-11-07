@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import 'bulma/css/bulma.min.css';
-import BookForm from './BookForm'
+import BookForm from './BookForm';
+import MovieForm from './MovieForm';
 
-function MainPanel({ children }: { children: React.ReactNode }) {
+function MainPanel() {
   const [selectedTab, setSelectedTab] = useState("book");
 
   function handleTabClick(event: React.MouseEvent<Element, MouseEvent>) {
-    if (!event.currentTarget.classList.contains("is-active"))
+    if (!event.currentTarget.classList.contains("is-active")) {
       toggleActiveTab();
+      
+      if (event.currentTarget.id === "books-tab") {
+        setSelectedTab("movie");
+      } else {
+        setSelectedTab("book");
+      }
+    }
   }
 
   function toggleActiveTab() {
@@ -36,7 +44,7 @@ function MainPanel({ children }: { children: React.ReactNode }) {
           </ul>
         </div>
 
-        { children }
+        { selectedTab === "book" ? <BookForm /> : <MovieForm /> }
       </div>
     </section>
   );
